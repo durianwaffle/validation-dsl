@@ -1,0 +1,15 @@
+{
+    "projectName": "LangiumGrammar",
+    "languages": [{
+        "id": "langium",
+        "grammar": "src/grammar/langium-grammar.langium",
+        "fileExtensions": [
+          "langium"
+        ],
+        "chevrotainParserConfig": {
+            "maxLookahead": 3
+        }
+    }],
+    "out": "src/grammar/generated",
+    "langiumInternal": true
+}

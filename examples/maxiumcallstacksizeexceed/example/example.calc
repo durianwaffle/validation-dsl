@@ -1,0 +1,5 @@
+c:int :=a + b
+
+b:bool := x + y
+
+function f(a:int,b:bool):c;

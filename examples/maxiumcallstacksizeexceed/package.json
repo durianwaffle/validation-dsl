@@ -1,0 +1,93 @@
+{
+    "name": "arithmetics",
+    "displayName": "Validation min example DSL",
+    "version": "3.2.0",
+    "description": "Example language to show validation errors built using Langium",
+    "homepage": "https://langium.org",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "license": "MIT",
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "maxiumcallstacksizeexceed",
+                "aliases": [
+                    "Maxiumcallstacksizeexceed",
+                    "maxiumcallstacksizeexceed"
+                ],
+                "extensions": [
+                    ".calc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "maxiumcallstacksizeexceed",
+                "scopeName": "source.maxiumcallstacksizeexceed",
+                "path": "./syntaxes/maxiumcallstacksizeexceed.tmLanguage.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:maxiumcallstacksizeexceed"
+    ],
+    "files": [
+        "bin",
+        "out",
+        "src",
+        "syntaxes",
+        "language-configuration.json"
+    ],
+    "bin": {
+        "arithmetics-cli": "./bin/cli.js"
+    },
+    "type": "module",
+    "main": "./out/extension.cjs",
+    "exports": {
+        ".": {
+            "types": "./out/extension.d.ts",
+            "default": "./out/extension.js"
+        },
+        "./api": {
+            "types": "./out/language-server/generated/ast.d.ts",
+            "default": "./out/language-server/generated/ast.js"
+        }
+    },
+    "scripts": {
+        "build": "node esbuild.mjs",
+        "watch": "node esbuild.mjs --watch",
+        "lint": "eslint src test --ext ts",
+        "langium:generate": "langium generate",
+        "publish:next": "npm --no-git-tag-version version \"$(semver $npm_package_version -i minor)-next.$(git rev-parse --short HEAD)\" && npm publish --tag next",
+        "publish:latest": "npm publish --tag latest --access public"
+    },
+    "dependencies": {
+        "chalk": "~5.3.0",
+        "commander": "~11.0.0",
+        "langium": "~3.2.0",
+        "vscode-languageclient": "~9.0.1",
+        "vscode-languageserver": "~9.0.1"
+    },
+    "devDependencies": {
+        "langium-cli": "~3.2.0"
+    },
+    "volta": {
+        "node": "18.19.1",
+        "npm": "10.2.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eclipse-langium/langium",
+        "directory": "examples/maxiumcallstacksizeexceed"
+    },
+    "bugs": "https://github.com/eclipse-langium/langium/issues",
+    "author": {
+        "name": "TypeFox",
+        "url": "https://www.typefox.io"
+    }
+}

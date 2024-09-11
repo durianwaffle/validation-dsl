@@ -1,0 +1,117 @@
+{
+  "name": "langium-vscode",
+  "publisher": "langium",
+  "version": "3.2.0",
+  "displayName": "Langium",
+  "description": "Support for the Langium Grammar Language",
+  "homepage": "https://langium.org",
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "icon": "data/langium-logo.png",
+  "galleryBanner": {
+    "color": "#262626",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "langium.showRailroadDiagram",
+        "title": "Show Railroad Syntax Diagram",
+        "category": "Langium",
+        "icon": "$(list-tree)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "langium.showRailroadDiagram",
+          "when": "editorLangId == langium",
+          "group": "navigation"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "langium",
+        "extensions": [
+          ".langium"
+        ],
+        "aliases": [
+          "Langium"
+        ],
+        "configuration": "./data/langium.configuration.json",
+        "icon": {
+          "light": "./data/langium-logo.png",
+          "dark": "./data/langium-logo.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "langium",
+        "scopeName": "source.langium",
+        "path": "./data/langium.tmLanguage.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "langium-config.json",
+        "url": "./data/langium-config-schema.json"
+      }
+    ],
+    "configuration": {
+      "title": "Langium",
+      "properties": {
+        "langium.build.ignorePatterns": {
+          "type": "string",
+          "default": "node_modules, out",
+          "description": "Specifies the exclusion patterns during initial workspace indexing. You will need to reload your extension afterwards."
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onLanguage:langium",
+    "onWebviewPanel:railroadDiagram"
+  ],
+  "vsce": {
+    "dependencies": false
+  },
+  "main": "out/extension.cjs",
+  "scripts": {
+    "prepare": "npm run copy:schema",
+    "copy:schema": "shx cp ../langium-cli/langium-config-schema.json ./data",
+    "vscode:prepublish": "npm run clean && tsc --noEmit && npm run lint && node esbuild.mjs --minify && npm run copy:schema",
+    "clean": "shx rm -rf out",
+    "build": "tsc --noEmit && node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "lint": "eslint src --ext ts"
+  },
+  "dependencies": {
+    "langium": "3.2.0",
+    "langium-railroad": "3.2.0",
+    "vscode-languageserver": "~9.0.1",
+    "ignore": "~5.2.4"
+  },
+  "volta": {
+    "node": "18.19.1",
+    "npm": "10.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-langium/langium",
+    "directory": "packages/langium-vscode"
+  },
+  "bugs": "https://github.com/eclipse-langium/langium/issues",
+  "author": {
+    "name": "TypeFox",
+    "url": "https://www.typefox.io"
+  }
+}

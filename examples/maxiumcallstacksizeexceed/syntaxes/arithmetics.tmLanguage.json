@@ -1,0 +1,47 @@
+{
+  "name": "arithmetics",
+  "scopeName": "source.arithmetics",
+  "fileTypes": [
+    ".calc"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "name": "keyword.control.arithmetics",
+      "match": "\\b([aA][nN][yY]|[aA][nN][yY][__][aA][rR][rR][aA][yY]|[aA][rR][rR][aA][yY]|[bB][oO][oO][lL]|[bB][yY][tT][eE]|[dD][aA][tT][eE]|[dD][aA][tT][eE][__][aA][nN][dD][__][tT][iI][mM][eE]|[dD][iI][nN][tT]|[dD][wW][oO][rR][dD]|[eE][nN][dD][__][sS][tT][rR][uU][cC][tT]|[fF][aA][lL][sS][eE]|[fF][uU][nN][cC][tT][iI][oO][nN]|[iI][nN][tT]|[lL][iI][nN][tT]|[lL][rR][eE][aA][lL]|[lL][wW][oO][rR][dD]|[oO][fF]|[rR][eE][aA][lL]|[sS][iI][nN][tT]|[sS][tT][rR][iI][nN][gG]|[sS][tT][rR][uU][cC][tT]|[tT][iI][mM][eE]|[tT][iI][mM][eE][__][oO][fF][__][dD][aA][yY]|[tT][rR][uU][eE]|[tT][yY][pP][eE][dD]|[uU][dD][iI][nN][tT]|[uU][iI][nN][tT]|[uU][lL][iI][nN][tT]|[uU][sS][iI][nN][tT]|[wW][oO][rR][dD]|[wW][sS][tT][rR][iI][nN][gG])\\b"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.arithmetics",
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.arithmetics"
+            }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.arithmetics"
+            }
+          }
+        },
+        {
+          "begin": "//",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.arithmetics"
+            }
+          },
+          "end": "(?=$)",
+          "name": "comment.line.arithmetics"
+        }
+      ]
+    }
+  }
+}

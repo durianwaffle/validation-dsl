@@ -1,0 +1,16 @@
+{
+    "files": [],
+    "references": [
+        { "path": "./packages/langium/tsconfig.src.json" },
+        { "path": "./packages/langium/tsconfig.test.json" },
+        { "path": "./packages/langium-railroad/tsconfig.json" },
+        { "path": "./packages/langium-cli/tsconfig.src.json" },
+        { "path": "./packages/langium-cli/tsconfig.test.json" },
+        { "path": "./packages/langium-sprotty/tsconfig.src.json" },
+        { "path": "./packages/langium-sprotty/tsconfig.test.json" },
+        { "path": "./packages/generator-langium/tsconfig.src.json" },
+        { "path": "./packages/generator-langium/tsconfig.test.json" },
+        { "path": "./examples/maxiumcallstacksizeexceed/tsconfig.src.json" },
+        { "path": "./examples/maxiumcallstacksizeexceed/tsconfig.test.json" },
+    ]
+ }
