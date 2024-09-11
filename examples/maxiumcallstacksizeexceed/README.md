@@ -2,7 +2,7 @@
 
 ## How to start
 
-The Validation min example-dsl Example is a minimal DSL example which has assignment and function calls without maxium call stack exceed issue by membercall and namedelement.
+The Validation min example-dsl Example is a minimal DSL example which has assignment and function calls with maxium call stack exceed issue by membercall and namedelement.
 
 * Ensure the complete project was properly built, otherwise run `npm install` and `npm run build` from the root of the Langium project.
 * And ensure that you have installed `yarn`.

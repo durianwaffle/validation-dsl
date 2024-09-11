@@ -2,7 +2,7 @@
 
 ## How to start
 
-The Validation min example-dsl Example is a minimal DSL example inspired by [arithmetics](https://langium.org/showcase/arithmetics/) which has assignment and function calls but added binary maxium call stack exceed issue by membercall and namedelement.
+The Validation min example-dsl Example is a minimal DSL example inspired by [arithmetics](https://langium.org/showcase/arithmetics/) which has assignment and function calls but added binary expression it will cause maxium call stack exceed issue for subtype variable declaration.
 
 * Ensure the complete project was properly built, otherwise run `npm install` and `npm run build` from the root of the Langium project.
 * And ensure that you have installed `yarn`.
